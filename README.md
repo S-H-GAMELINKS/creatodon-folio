@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+## これはなに？
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mastodonのローカルタイムラインに投稿されているNSFWが付いていない画像を一覧で確認できるようにするギャラリー機能の独自実装です。
 
-## Available Scripts
+## 導入方法
 
-In the project directory, you can run:
+まず `.env`を`.env.template`をもとに作成します。
 
-### `yarn start`
+```bash
+cp .env.template .env
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+次に`.env`内の`REACT_APP_MASTODON_DOMAIN`に以下のように自分が管理しているMastodonのドメインを設定します。
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+REACT_APP_MASTODON_DOMAIN=https://gamelinks007.net
 
-### `yarn test`
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+あとは`yarn install`などを実行してビルドします。
 
-### `yarn build`
+```bash
+yarn install
+yarn build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+最後にビルドされた静的ファイルを Mastodonのソースコード内にある`public`ディレクトリ以下にお好きな名前で配置してください。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
