@@ -1,6 +1,5 @@
 import React from 'react';
 import Masonry from 'react-masonry-css'
-import Blur from "react-blur";
 import { Status, MediaAttachment } from './type';
 
 const breakpointColumnsObj = {
