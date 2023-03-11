@@ -27,7 +27,15 @@ const Items: React.FC<ItemsProps> = (props: ItemsProps) => {
           statuses.map((status: Status) => {
             return status.media_attachments.map((mediaAttachment: MediaAttachment) => {
                   if (status.sensitive) {
-                    return;
+                    return (
+                      <div>
+                        <img className='img-blur' src={mediaAttachment.url} onClick={() => window.open(status.url)} />
+                        <div className='user-info' onClick={() => window.open(`${process.env.REACT_APP_MASTODON_DOMAIN}/@${status.account.acct}`)}>
+                          <img className='user-icon'src={status.account.avatar}/>
+                          <span className='user-acct'>{status.account.acct}NSFW</span>
+                        </div>
+                      </div>
+                    )
                   }
                   return (
                     <div>
